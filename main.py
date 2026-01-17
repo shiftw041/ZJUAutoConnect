@@ -9,10 +9,17 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
+# import sys
+# # 错误日志记录
+# sys.stdout = open('log.txt', 'a')
+# sys.stderr = open('log_error.txt', 'a')
 
 # ================= 配置区域 =================
-# 你的校园网登录页地址
+# 校园网登录页地址
 LOGIN_URL = "http://172.16.10.10/srun_portal_pc?ac_id=1&theme=pro"
+
+# 检测间隔
+CHECK_GAP = 30
 
 # 账号密码
 USERNAME = "12345678" 
@@ -97,8 +104,8 @@ def main():
             else:
                 print(f"[{time.strftime('%H:%M:%S')}] 重连似乎未生效，等待下一次尝试。")
         
-        # 每30秒检查一次
-        time.sleep(30)
+        # 循环检查
+        time.sleep(CHECK_GAP)
 
 if __name__ == "__main__":
     main()
