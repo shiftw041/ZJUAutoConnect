@@ -13,7 +13,7 @@ pip install selenium webdriver-manager
     1. 深澜系统(Srun)初始ID：
        * 账号输入框：username
        * 密码输入框：password
-       *登录按钮：login-account
+       * 登录按钮：login-account
     2. 如果跑不通，请打开登录页面，按F12，用左上角的小箭头点击输入框和登录按钮，查看它们的id="..."是什么，修改代码里By.ID后面的字符串。
 2. 无头模式 (--headless)：
     1. 代码里有一行options.add_argument("--headless")，意味着浏览器会在后台静默运行，用户不会看到弹窗。
